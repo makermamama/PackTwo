@@ -1,0 +1,746 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://dyrj.net/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://dyrj.net/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://dyrj.net/">
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetProductInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProductInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductInfoByXML">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetProductInfoByXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProductInfoByXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckBindData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SNs" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckBindDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckBindDataResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDistrictInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDistrictInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDistrictInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNetSiteInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DistrictNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNetSiteInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNetSiteInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDepartmentInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDepartmentInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDepartmentInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNewBoxNo">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetNewBoxNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNewBoxNoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetBoxStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BoxSN" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetBoxStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResetBoxStatusResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateEncasementBill">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ds">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateEncasementBillResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CreateEncasementBillByXml">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateEncasementBillByXmlResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CheckBoxNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BoxNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckBoxNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckBoxNoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateOutStockBill">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NetSiteNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OutStockNoticeID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BoxesNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BoxesSN" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateOutStockBillResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateOutStockBillResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSystemTime">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSystemTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSystemTimeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOutStockNotices">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetOutStockNoticesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOutStockNoticesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOutStockNoticeDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MachineID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OutStockNoticeID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOutStockNoticeDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOutStockNoticeDetailResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnLockStockNotice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MachineID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OutStockNoticeID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnLockStockNoticeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UnLockStockNoticeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProductInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProductInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetProductInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProductInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProductInfoByXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProductInfoByXML" />
+  </wsdl:message>
+  <wsdl:message name="GetProductInfoByXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProductInfoByXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckBindDataSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckBindData" />
+  </wsdl:message>
+  <wsdl:message name="CheckBindDataSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckBindDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDistrictInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDistrictInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetDistrictInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDistrictInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNetSiteInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNetSiteInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetNetSiteInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNetSiteInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDepartmentInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDepartmentInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNewBoxNoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNewBoxNo" />
+  </wsdl:message>
+  <wsdl:message name="GetNewBoxNoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNewBoxNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResetBoxStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:ResetBoxStatus" />
+  </wsdl:message>
+  <wsdl:message name="ResetBoxStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:ResetBoxStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateEncasementBillSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateEncasementBill" />
+  </wsdl:message>
+  <wsdl:message name="CreateEncasementBillSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateEncasementBillResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateEncasementBillByXmlSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateEncasementBillByXml" />
+  </wsdl:message>
+  <wsdl:message name="CreateEncasementBillByXmlSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateEncasementBillByXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckBoxNoSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckBoxNo" />
+  </wsdl:message>
+  <wsdl:message name="CheckBoxNoSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckBoxNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateOutStockBillSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateOutStockBill" />
+  </wsdl:message>
+  <wsdl:message name="CreateOutStockBillSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateOutStockBillResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSystemTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSystemTime" />
+  </wsdl:message>
+  <wsdl:message name="GetSystemTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSystemTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOutStockNoticesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOutStockNotices" />
+  </wsdl:message>
+  <wsdl:message name="GetOutStockNoticesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOutStockNoticesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOutStockNoticeDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOutStockNoticeDetail" />
+  </wsdl:message>
+  <wsdl:message name="GetOutStockNoticeDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOutStockNoticeDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="UnLockStockNoticeSoapIn">
+    <wsdl:part name="parameters" element="tns:UnLockStockNotice" />
+  </wsdl:message>
+  <wsdl:message name="UnLockStockNoticeSoapOut">
+    <wsdl:part name="parameters" element="tns:UnLockStockNoticeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SFBoxSoap">
+    <wsdl:operation name="Login">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户登录</wsdl:documentation>
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取【产品】信息</wsdl:documentation>
+      <wsdl:input message="tns:GetProductInfoSoapIn" />
+      <wsdl:output message="tns:GetProductInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductInfoByXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取【产品】信息</wsdl:documentation>
+      <wsdl:input message="tns:GetProductInfoByXMLSoapIn" />
+      <wsdl:output message="tns:GetProductInfoByXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckBindData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">检查【捆】数据</wsdl:documentation>
+      <wsdl:input message="tns:CheckBindDataSoapIn" />
+      <wsdl:output message="tns:CheckBindDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDistrictInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取【区域】信息</wsdl:documentation>
+      <wsdl:input message="tns:GetDistrictInfoSoapIn" />
+      <wsdl:output message="tns:GetDistrictInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNetSiteInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取【网点】信息</wsdl:documentation>
+      <wsdl:input message="tns:GetNetSiteInfoSoapIn" />
+      <wsdl:output message="tns:GetNetSiteInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取【部门】信息</wsdl:documentation>
+      <wsdl:input message="tns:GetDepartmentInfoSoapIn" />
+      <wsdl:output message="tns:GetDepartmentInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewBoxNo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取【包装箱号】</wsdl:documentation>
+      <wsdl:input message="tns:GetNewBoxNoSoapIn" />
+      <wsdl:output message="tns:GetNewBoxNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetBoxStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">还原【包装箱号】状态</wsdl:documentation>
+      <wsdl:input message="tns:ResetBoxStatusSoapIn" />
+      <wsdl:output message="tns:ResetBoxStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateEncasementBill">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">生成【装箱单】</wsdl:documentation>
+      <wsdl:input message="tns:CreateEncasementBillSoapIn" />
+      <wsdl:output message="tns:CreateEncasementBillSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateEncasementBillByXml">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">生成【装箱单】</wsdl:documentation>
+      <wsdl:input message="tns:CreateEncasementBillByXmlSoapIn" />
+      <wsdl:output message="tns:CreateEncasementBillByXmlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckBoxNo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">检查【箱号】信息</wsdl:documentation>
+      <wsdl:input message="tns:CheckBoxNoSoapIn" />
+      <wsdl:output message="tns:CheckBoxNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOutStockBill">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">生成【发货单】</wsdl:documentation>
+      <wsdl:input message="tns:CreateOutStockBillSoapIn" />
+      <wsdl:output message="tns:CreateOutStockBillSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemTime">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取系统时间</wsdl:documentation>
+      <wsdl:input message="tns:GetSystemTimeSoapIn" />
+      <wsdl:output message="tns:GetSystemTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOutStockNotices">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取未执行完的【发货通知】列表</wsdl:documentation>
+      <wsdl:input message="tns:GetOutStockNoticesSoapIn" />
+      <wsdl:output message="tns:GetOutStockNoticesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOutStockNoticeDetail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取【发货通知】明细内容</wsdl:documentation>
+      <wsdl:input message="tns:GetOutStockNoticeDetailSoapIn" />
+      <wsdl:output message="tns:GetOutStockNoticeDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UnLockStockNotice">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">解除PDA锁定通知单</wsdl:documentation>
+      <wsdl:input message="tns:UnLockStockNoticeSoapIn" />
+      <wsdl:output message="tns:UnLockStockNoticeSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SFBoxSoap" type="tns:SFBoxSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://dyrj.net/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductInfo">
+      <soap:operation soapAction="http://dyrj.net/GetProductInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductInfoByXML">
+      <soap:operation soapAction="http://dyrj.net/GetProductInfoByXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckBindData">
+      <soap:operation soapAction="http://dyrj.net/CheckBindData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDistrictInfo">
+      <soap:operation soapAction="http://dyrj.net/GetDistrictInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNetSiteInfo">
+      <soap:operation soapAction="http://dyrj.net/GetNetSiteInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentInfo">
+      <soap:operation soapAction="http://dyrj.net/GetDepartmentInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewBoxNo">
+      <soap:operation soapAction="http://dyrj.net/GetNewBoxNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetBoxStatus">
+      <soap:operation soapAction="http://dyrj.net/ResetBoxStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateEncasementBill">
+      <soap:operation soapAction="http://dyrj.net/CreateEncasementBill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateEncasementBillByXml">
+      <soap:operation soapAction="http://dyrj.net/CreateEncasementBillByXml" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckBoxNo">
+      <soap:operation soapAction="http://dyrj.net/CheckBoxNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOutStockBill">
+      <soap:operation soapAction="http://dyrj.net/CreateOutStockBill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemTime">
+      <soap:operation soapAction="http://dyrj.net/GetSystemTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOutStockNotices">
+      <soap:operation soapAction="http://dyrj.net/GetOutStockNotices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOutStockNoticeDetail">
+      <soap:operation soapAction="http://dyrj.net/GetOutStockNoticeDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnLockStockNotice">
+      <soap:operation soapAction="http://dyrj.net/UnLockStockNotice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SFBoxSoap12" type="tns:SFBoxSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://dyrj.net/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductInfo">
+      <soap12:operation soapAction="http://dyrj.net/GetProductInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductInfoByXML">
+      <soap12:operation soapAction="http://dyrj.net/GetProductInfoByXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckBindData">
+      <soap12:operation soapAction="http://dyrj.net/CheckBindData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDistrictInfo">
+      <soap12:operation soapAction="http://dyrj.net/GetDistrictInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNetSiteInfo">
+      <soap12:operation soapAction="http://dyrj.net/GetNetSiteInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentInfo">
+      <soap12:operation soapAction="http://dyrj.net/GetDepartmentInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewBoxNo">
+      <soap12:operation soapAction="http://dyrj.net/GetNewBoxNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetBoxStatus">
+      <soap12:operation soapAction="http://dyrj.net/ResetBoxStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateEncasementBill">
+      <soap12:operation soapAction="http://dyrj.net/CreateEncasementBill" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateEncasementBillByXml">
+      <soap12:operation soapAction="http://dyrj.net/CreateEncasementBillByXml" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckBoxNo">
+      <soap12:operation soapAction="http://dyrj.net/CheckBoxNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOutStockBill">
+      <soap12:operation soapAction="http://dyrj.net/CreateOutStockBill" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemTime">
+      <soap12:operation soapAction="http://dyrj.net/GetSystemTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOutStockNotices">
+      <soap12:operation soapAction="http://dyrj.net/GetOutStockNotices" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOutStockNoticeDetail">
+      <soap12:operation soapAction="http://dyrj.net/GetOutStockNoticeDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnLockStockNotice">
+      <soap12:operation soapAction="http://dyrj.net/UnLockStockNotice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SFBox">
+    <wsdl:port name="SFBoxSoap" binding="tns:SFBoxSoap">
+      <soap:address location="http://192.168.199.228/SFB/WebService/SFBox.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SFBoxSoap12" binding="tns:SFBoxSoap12">
+      <soap12:address location="http://192.168.199.228/SFB/WebService/SFBox.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
