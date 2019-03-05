@@ -187,12 +187,12 @@ namespace winformVision
                 }
 
                 //判断传感器2的触发逻辑
-                if (R_Tags == TriggerTwo )
+                if (R_Tags == noTriggerTwo )
                     SecodeOne = true;
 
                 if (SecodeOne)
                 {
-                    if (R_Tags == noTriggerTwo)
+                    if (R_Tags == TriggerTwo)
                         SecodeTwo = true;
                 }
 
@@ -277,7 +277,7 @@ namespace winformVision
                         case Reject:
                             byte[] bufON = Encoding.ASCII.GetBytes(rejectON);
                             ComDevice.Write(bufON, 0, bufON.Length);
-                            Thread.Sleep(TreandSleep*40);
+                            Thread.Sleep(TreandSleep*36);
                             byte[] bufoff = Encoding.ASCII.GetBytes(rejectOff);
                             ComDevice.Write(bufoff, 0, bufoff.Length);
                             Thread.Sleep(TreandSleep);

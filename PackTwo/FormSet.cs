@@ -33,7 +33,7 @@ namespace PackTwo
                 MessageBox.Show("请输入有效值");
                 return;
             }
-            Service.Url = Service.Url;
+            Service.Url = txtServiceAddress.Text;
             XmlTool.Update("Root/IP", txtRFID_IP.Text);
             XmlTool.Update("Root/Port", txtRFID_Port.Text);
 

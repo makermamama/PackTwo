@@ -345,7 +345,7 @@ namespace PackTwo
             this.listView_Tags.BeginUpdate();
             ListViewItem listViewItem = new ListViewItem();
             listViewItem.SubItems[0].Text = tag;
-            bool flag = tag.Substring(7, 1) == this.BoxNofirst;
+            bool flag = tag.Substring(6, 2) == this.BoxNofirst;
             if (flag)
             {
                 listViewItem.SubItems.Add("正确");
@@ -572,7 +572,11 @@ namespace PackTwo
             this.toolStripTextBox_item.Text = dataRowView["FPackageUnitRate"].ToString();
             this.toolStripTextBox_buonds.Text = dataRowView["FBoxUnitRate"].ToString();
             string text = dataRowView["FName"].ToString();
-            this.BoxNofirst = text.Substring(0, 1);
+            this.BoxNofirst = System.Text.RegularExpressions.Regex.Replace(text, @"[^0-9]+", "").PadLeft(2, '0');
+            if (text.Substring(0, 2) == "M2") this.BoxNofirst = "12";
+            if (BoxNofirst.Length != 2) {
+                MessageBox.Show(BoxNofirst+"的数据长度不等于2");
+            }
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
